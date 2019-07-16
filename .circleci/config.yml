@@ -84,8 +84,8 @@ jobs:
       - run:
           name: Run PHPUnit
           command: |
-            cd /var/www/html
-            ./vendor/bin/phpunit --configuration ./custom/plugins/$PLUGIN_NAME/phpunit.xml.dist ./custom/plugins/$PLUGIN_NAME/
+            cd /var/www/html/custom/plugins/$PLUGIN_NAME
+            phpunit
   codesniffer:
     docker:
       - image: circleci/php:7.1-node-browsers
