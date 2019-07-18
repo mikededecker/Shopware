@@ -89,17 +89,14 @@ jobs:
   codesniffer:
     docker:
       - image: circleci/php:7.1-node-browsers
+    working_directory: /var/www/html
     steps:
       - checkout
-      - run:
-          name: Move project
-          command: mv * /var/www/html
       - restore_cache:
           key: -v1-{{ checksum "/var/www/html/composer.json"}}
       - run:
           name: Composer install
           command: |
-            cd /var/www/html
             composer install --prefer-dist
       - save_cache:
           key: -v1-{{ checksum "/var/www/html/composer.json"}}
@@ -108,7 +105,6 @@ jobs:
       - run:
           name: Run Code Sniffer
           command: |
-            cd /var/www/html
             vendor/bin/phpcs --ignore=*/vendor/* --standard=phpcs.ruleset.xml -n /var/www/html
 workflows:
   version: 2
