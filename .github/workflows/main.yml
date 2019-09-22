@@ -18,6 +18,7 @@ jobs:
           cd ..
           pwd
           ls -a shopware
+          echo ""
           ls -a Shopware
           cd shopware/build
           mv build.properties.dist build.properties
