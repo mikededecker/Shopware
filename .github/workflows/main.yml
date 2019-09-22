@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir -p /home/runner/work/shopware/custom/plugins/MltisafeMultiSafepayPayment
           cd /home/runner/work/Shopware
-          mv -r * /var/www/html/custom/plugins/MltisafeMultiSafepayPayment
+          mv * /home/runner/work/shopware/custom/plugins/MltisafeMultiSafepayPayment
           cd /home/runner/work/shopware
           bin/console sw:plugin:refresh
           bin/console sw:plugin:install MltisafeMultiSafepayPayment
