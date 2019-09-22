@@ -15,12 +15,9 @@ jobs:
           path: Shopware
 #      - name: See al files in folder
 #        run: ls -a
-      - name: Run a multi-line script
+      - name: Php version
         run: |
-          pwd
-          ls -a
-      - name: Run another multi-line script
+          php -v
+      - name: See files from shopware
         run: |
-          cd ../shopware
-          pwd
           ls -a
