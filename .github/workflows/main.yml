@@ -18,7 +18,7 @@ jobs:
         run: ls -a
       - name: Make auto installer
         run: |
-          cd /var/www/html/build
+          cd build
           mv build.properties.dist build.properties
           ant write-properties -Dapp.host=shopware.docker  -Ddb.name=shopware -Ddb.host=127.0.0.1 -Ddb.user=root -Ddb.password=password
           ant build-unit
