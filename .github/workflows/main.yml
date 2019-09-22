@@ -25,14 +25,14 @@ jobs:
           path: Shopware/custom/plugins/MltisafeMultiSafepayPayment
       - name: Install plugin
         run: |
-          cd /home/runner/work/Shopware
+          cd /home/runner/work
           ls -a
-          bin/console sw:plugin:refresh
-          bin/console sw:plugin:install MltisafeMultiSafepayPayment
-          bin/console sw:plugin:activate MltisafeMultiSafepayPayment --clear-cache
-          bin/console sw:plugin:refresh
-          bin/console sw:generate:attributes
-          bin/console orm:generate:proxies
+#          bin/console sw:plugin:refresh
+#          bin/console sw:plugin:install MltisafeMultiSafepayPayment
+#          bin/console sw:plugin:activate MltisafeMultiSafepayPayment --clear-cache
+#          bin/console sw:plugin:refresh
+#          bin/console sw:generate:attributes
+#          bin/console orm:generate:proxies
     services:
       mysql:
         image: mysql:5.7
