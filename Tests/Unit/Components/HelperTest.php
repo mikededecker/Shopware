@@ -38,6 +38,11 @@ class HelperTest extends TestCase
         $this->assertEquals($expected_apartment, $result[1]);
     }
 
+    public function testIsTrue()
+    {
+        $this->assertTrue(true);
+    }
+
     /**
      * @return array
      */
