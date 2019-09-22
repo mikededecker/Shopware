@@ -19,3 +19,6 @@ jobs:
       - name: See files from shopware
         run: |
           ls -a
+      - name: Composer
+        run: |
+          composer -v
