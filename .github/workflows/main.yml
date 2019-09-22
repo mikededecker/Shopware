@@ -33,6 +33,11 @@ jobs:
           bin/console sw:plugin:refresh
           bin/console sw:generate:attributes
           bin/console orm:generate:proxies
+      - name: Run PhpUnit
+        run: |
+          cd ../shopware/custom/plugins/MltisafeMultiSafepayPayment
+          ../../../vendor/bin/phpunit
+
     services:
       mysql:
         image: mysql:5.7
