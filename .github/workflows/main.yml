@@ -15,6 +15,7 @@ jobs:
         run: mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -ppassword -e "SHOW DATABASES"
       - name: Make auto installer
         run: |
+          cd ..
           ls -a
           cd shopware/build
           mv build.properties.dist build.properties
