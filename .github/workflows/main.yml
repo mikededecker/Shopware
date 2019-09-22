@@ -25,7 +25,7 @@ jobs:
           path: Shopware/custom/plugins/MltisafeMultiSafepayPayment
       - name: Install plugin
         run: |
-          cd /home/runner/work/Shopware
+          cd /home/runner/work/Shopware/Shopware
           ls -a
 #          bin/console sw:plugin:refresh
 #          bin/console sw:plugin:install MltisafeMultiSafepayPayment
