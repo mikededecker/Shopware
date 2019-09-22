@@ -8,17 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          repository: shopware/shopware
-          ref: '5.6'
-          path: Shopware
+#      - uses: actions/checkout@v1
+#        with:
+#          repository: shopware/shopware
+#          ref: '5.6'
+#          path: Shopware
       - name: Php version
         run: |
-          php7.2 -v
-      - name: See files from shopware
-        run: |
-          ls -a
-      - name: Composer
-        run: |
-          composer -v
+          composer create-project shopware/shopware .
