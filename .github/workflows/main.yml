@@ -12,9 +12,9 @@ jobs:
         with:
           repository: shopware/shopware
           ref: '5.6'
-      - name: See al files in folder
-        run: ls -a
-#      - name: Run a multi-line script
-#        run: |
-#          pwd
-#          git --help
+#      - name: See al files in folder
+#        run: ls -a
+      - name: Run a multi-line script
+        run: |
+          pwd
+          ls -a
