@@ -11,7 +11,6 @@ jobs:
       - uses: actions/checkout@v1
         with:
           repository: shopware/shopware
-          path: .
           ref: '5.6'
 #      - name: See al files in folder
 #        run: ls -a
