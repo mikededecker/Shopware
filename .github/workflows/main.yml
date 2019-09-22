@@ -16,25 +16,22 @@ jobs:
         run: mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -ppassword -e "SHOW DATABASES"
       - name: Make auto installer
         run: |
-          cd ..
-          pwd
-          ls -a shopware
-          echo ""
-          ls -a Shopware
           cd shopware/build
           mv build.properties.dist build.properties
           ant write-properties -Dapp.host=shopware.docker  -Ddb.name=shopware -Ddb.host=127.0.0.1 -Ddb.user=root -Ddb.password=password -Ddb.port=${{ job.services.mysql.ports['3306'] }}
-#          ant build-unit
+          ant build-unit
       - name: Install plugin
         run: |
+          mkdir -p /home/runner/work/shopware/custom/plugins/MltisafeMultiSafepayPayment
           cd /home/runner/work/Shopware
-          ls -a
-#          bin/console sw:plugin:refresh
-#          bin/console sw:plugin:install MltisafeMultiSafepayPayment
-#          bin/console sw:plugin:activate MltisafeMultiSafepayPayment --clear-cache
-#          bin/console sw:plugin:refresh
-#          bin/console sw:generate:attributes
-#          bin/console orm:generate:proxies
+          mv * /var/www/html/custom/plugins/MltisafeMultiSafepayPayment
+          cd /home/runner/work/shopware
+          bin/console sw:plugin:refresh
+          bin/console sw:plugin:install MltisafeMultiSafepayPayment
+          bin/console sw:plugin:activate MltisafeMultiSafepayPayment --clear-cache
+          bin/console sw:plugin:refresh
+          bin/console sw:generate:attributes
+          bin/console orm:generate:proxies
     services:
       mysql:
         image: mysql:5.7
