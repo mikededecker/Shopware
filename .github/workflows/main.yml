@@ -27,7 +27,7 @@ jobs:
 #          ant build-unit
       - name: Install plugin
         run: |
-          cd /home/runner/work
+          cd /home/runner/work/Shopware
           ls -a
 #          bin/console sw:plugin:refresh
 #          bin/console sw:plugin:install MltisafeMultiSafepayPayment
