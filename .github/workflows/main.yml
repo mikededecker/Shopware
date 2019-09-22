@@ -23,10 +23,10 @@ jobs:
           ant build-unit
       - name: Install plugin
         run: |
-          mkdir -p /home/runner/work/shopware/custom/plugins/MltisafeMultiSafepayPayment
-          cd /home/runner/work/Shopware
-          mv * /home/runner/work/shopware/custom/plugins/MltisafeMultiSafepayPayment
-          cd /home/runner/work/shopware
+          mkdir -p /home/runner/work/Shopware/shopware/custom/plugins/MltisafeMultiSafepayPayment
+          cd /home/runner/work/Shopware/Shopware
+          mv * /home/runner/work/Shopware/shopware/custom/plugins/MltisafeMultiSafepayPayment
+          cd /home/runner/work/Shopware/shopware
           bin/console sw:plugin:refresh
           bin/console sw:plugin:install MltisafeMultiSafepayPayment
           bin/console sw:plugin:activate MltisafeMultiSafepayPayment --clear-cache
