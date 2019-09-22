@@ -14,6 +14,14 @@ jobs:
           path: Shopware
       - name: Verify MySQL connection from host
         run: mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -ppassword -e "SHOW DATABASES"
+      - name: Check files
+        run: ls -a
+      - name: Make auto installer
+        run: |
+          cd /var/www/html/build
+          mv build.properties.dist build.properties
+          ant write-properties -Dapp.host=shopware.docker  -Ddb.name=shopware -Ddb.host=127.0.0.1 -Ddb.user=root -Ddb.password=password
+          ant build-unit
     services:
       mysql:
         image: mysql:5.7
