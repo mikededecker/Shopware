@@ -13,11 +13,9 @@ jobs:
           repository: shopware/shopware
           ref: '5.6'
           path: Shopware
-#      - name: See al files in folder
-#        run: ls -a
       - name: Php version
         run: |
-          php -v
+          php7.2 -v
       - name: See files from shopware
         run: |
           ls -a
