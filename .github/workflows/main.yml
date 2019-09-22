@@ -22,11 +22,10 @@ jobs:
 #          ant build-unit
       - uses: actions/checkout@v1
         with:
-          path: Shopware/custom/plugins/MltisafeMultiSafepayPayment
-          clean: false
+          path: MltisafeMultiSafepayPayment
       - name: Install plugin
         run: |
-          cd /home/runner/work/Shopware/Shopware
+          cd /home/runner/work
           ls -a
 #          bin/console sw:plugin:refresh
 #          bin/console sw:plugin:install MltisafeMultiSafepayPayment
