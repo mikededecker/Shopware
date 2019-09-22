@@ -20,6 +20,6 @@ jobs:
           ls -a
       - name: Run another multi-line script
         run: |
-          cd ..
+          cd ../shopware
           pwd
           ls -a
