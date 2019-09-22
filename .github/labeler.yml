@@ -1,0 +1,6 @@
+'Status: Review Needer':
+  - '*'
+'Type: CI':
+  - '.github/**'
+'Type: Testing':
+  - 'Tests/**'
